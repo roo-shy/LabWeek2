@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/2-col-portfolio.css" rel="stylesheet">
+    <title></title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {'packages': ["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          [
+            'Pilot', 'Profit'
+          ],
+          [
+            'Fry', 35000
+          ],
+          [
+            'Amy', 15000
+          ],
+          [
+            'Bender', 355600
+          ],
+          ['Leela', 131295]
+        ]);
+
+        var options = {
+          title: 'Revenue Per Pilot'
+        };
+        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+        chart.draw(data, options);
+
+        var data1 = google.visualization.arrayToDataTable([
+          [
+            'Planet', 'Profit'
+          ],
+          [
+            'Earth', 35000
+          ],
+          [
+            'Mars', 15000
+          ],
+          [
+            'Uranus', 355600
+          ],
+          [
+            'Moon', 44500
+          ],
+          [
+            'Saturn', 1000
+          ],
+          [
+            'Pluto', 2344
+          ],
+          [
+            'Jupiter', 3451
+          ],
+          ['Mercury', 80000]
+        ]);
+
+        var options = {
+          title: 'Revenue Per Planet',
+          is3D: true
+        };
+
+        var chart1 = new google.visualization.PieChart(document.getElementById('piechart'));
+        chart1.draw(data1, options);
+      }
+    </script>
+  </head>
+
+  <body>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Page Header -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Here is the total
+                  $536,895.00
+                  revenue
+                </h1>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Projects Row -->
+        <div class="row">
+            <div class="col-md-6 portfolio-item">
+
+      <div id="piechart_3d" style="width: 600px; height: 400px;"></div>
+        <h1><small>List of all employees, number of trips and bonus</small></h1>
+      <table>
+              <tr>
+                <th>Pilot</th>
+                <th>Trips</th>
+                <th>Bonus</th>
+              </tr>
+              <tr>
+                <td>Fry</td>
+                <td>2</td>
+                <td>$3,500.00</td>
+              </tr>
+              <tr>
+                <td>Amy</td>
+                <td>1</td>
+                <td>$1,500.00</td>
+              </tr>
+
+              <tr>
+                <td>Bender</td>
+                <td>2</td>
+                <td>$35,560.00</td>
+              </tr>
+
+              <tr>
+                <td>Leela</td>
+                <td>5</td>
+                <td>$13,129.50</td>
+              </tr>
+
+
+          </table>
+          <a href="#">
+              <img class="img-responsive" style="width: 600px;" src= "https://media.giphy.com/media/9J7DlqKx4plAs/giphy.gif" alt="">
+          </a>
+
+  </div>
+  <div class="row">
+      <div class="col-md-6 portfolio-item">
+      <div id="piechart" style="width: 600px; height: 400px;"></div>
+        <h1><small>List of all Shipments</small></h1>
+          <table>
+            <thead>
+              <tr>
+                <th>Destination</th>
+                <th>Shipment</th>
+                <th>Crates</th>
+                <th>Money</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+              <tr>
+                <td>Earth</td>
+                <td>Hamburgers</td>
+                <td>$150.00</td>
+                <td>$30,000.00</td>
+              </tr>
+              
+              <tr>
+                <td>Moon</td>
+                <td>Tacos</td>
+                <td>$33.00</td>
+                <td>$44,500.00</td>
+              </tr>
+              
+              <tr>
+                <td>Earth</td>
+                <td>Movies</td>
+                <td>$34.00</td>
+                <td>$5,000.00</td>
+              </tr>
+              
+              <tr>
+                <td>Mars</td>
+                <td>BBQ Sauce</td>
+                <td>$999.00</td>
+                <td>$15,000.00</td>
+              </tr>
+              
+              <tr>
+                <td>Uranus</td>
+                <td>Whiskey</td>
+                <td>$1,000.00</td>
+                <td>$345,600.00</td>
+              </tr>
+              
+              <tr>
+                <td>Jupiter</td>
+                <td>Books</td>
+                <td>$10.00</td>
+                <td>$3,451.00</td>
+              </tr>
+              
+              <tr>
+                <td>Pluto</td>
+                <td>Beer</td>
+                <td>$100.00</td>
+                <td>$2,344.00</td>
+              </tr>
+              
+              <tr>
+                <td>Uranus</td>
+                <td>Pizza</td>
+                <td>$66.00</td>
+                <td>$10,000.00</td>
+              </tr>
+              
+              <tr>
+                <td>Saturn</td>
+                <td>Pizza</td>
+                <td>$26.00</td>
+                <td>$1,000.00</td>
+              </tr>
+              
+              <tr>
+                <td>Mercury</td>
+                <td>Pizza</td>
+                <td>$36.00</td>
+                <td>$80,000.00</td>
+              </tr>
+              
+            </tbody>
+
+          </table>
+</div>
+
+</div>
+</div>
+  </body>
+</html>

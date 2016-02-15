@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/2-col-portfolio.css" rel="stylesheet">
+    <title></title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {'packages': ["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          [
+            'Pilot', 'Profit'
+          ],
+          [
+            'Fry', <%= frymoney %>
+          ],
+          [
+            'Amy', <%= amymoney %>
+          ],
+          [
+            'Bender', <%= bendermoney %>
+          ],
+          ['Leela', <%= leelamoney %>]
+        ]);
+
+        var options = {
+          title: 'Revenue Per Pilot'
+        };
+        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+        chart.draw(data, options);
+
+        var data1 = google.visualization.arrayToDataTable([
+          [
+            'Planet', 'Profit'
+          ],
+          [
+            'Earth', <%= moneyperearth %>
+          ],
+          [
+            'Mars', <%= moneypermars %>
+          ],
+          [
+            'Uranus', <%= moneyperuranus %>
+          ],
+          [
+            'Moon', <%= moneypermoon %>
+          ],
+          [
+            'Saturn', <%= moneypersaturn %>
+          ],
+          [
+            'Pluto', <%= moneyperpluto %>
+          ],
+          [
+            'Jupiter', <%= moneyperjupiter %>
+          ],
+          ['Mercury', <%= moneypermercury %>]
+        ]);
+
+        var options = {
+          title: 'Revenue Per Planet',
+          is3D: true
+        };
+
+        var chart1 = new google.visualization.PieChart(document.getElementById('piechart'));
+        chart1.draw(data1, options);
+      }
+    </script>
+  </head>
+
+  <body>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Page Header -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Here is the total
+                  <%= formatted_number(value) %>
+                  revenue
+                </h1>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Projects Row -->
+        <div class="row">
+            <div class="col-md-6 portfolio-item">
+
+      <div id="piechart_3d" style="width: 600px; height: 400px;"></div>
+        <h1><small>List of all employees, number of trips and bonus</small></h1>
+      <table>
+              <tr>
+                <th>Pilot</th>
+                <th>Trips</th>
+                <th>Bonus</th>
+              </tr>
+              <tr>
+                <td>Fry</td>
+                <td><%= frystrip %></td>
+                <td><%= formatted_number(frysbonus) %></td>
+              </tr>
+              <tr>
+                <td>Amy</td>
+                <td><%= amystrip %></td>
+                <td><%= formatted_number(amysbonus) %></td>
+              </tr>
+
+              <tr>
+                <td>Bender</td>
+                <td><%= benderstrip %></td>
+                <td><%= formatted_number(bendersbonus) %></td>
+              </tr>
+
+              <tr>
+                <td>Leela</td>
+                <td><%= leelastrip %></td>
+                <td><%= formatted_number(leelasbonus) %></td>
+              </tr>
+
+
+          </table>
+          <a href="#">
+              <img class="img-responsive" style="width: 600px;" src= "https://media.giphy.com/media/9J7DlqKx4plAs/giphy.gif" alt="">
+          </a>
+
+  </div>
+  <div class="row">
+      <div class="col-md-6 portfolio-item">
+      <div id="piechart" style="width: 600px; height: 400px;"></div>
+        <h1><small>List of all Shipments</small></h1>
+          <table>
+            <thead>
+              <tr>
+                <th>Destination</th>
+                <th>Shipment</th>
+                <th>Crates</th>
+                <th>Money</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% profit.each do |table| %>
+              <tr>
+                <td><%= table["Destination"] %></td>
+                <td><%= table["Shipment"] %></td>
+                <td><%= formatted_number(table["Crates"]) %></td>
+                <td><%= formatted_number(table["Money"]) %></td>
+              </tr>
+              <% end %>
+            </tbody>
+
+          </table>
+</div>
+
+</div>
+</div>
+  </body>
+</html>
