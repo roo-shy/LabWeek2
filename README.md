@@ -1,4 +1,4 @@
-# LabWeek2 - HTML Report from CSV
+## LabWeek2 - HTML Report from CSV
 
 Learning Objectives
 
