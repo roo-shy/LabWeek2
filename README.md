@@ -25,7 +25,7 @@
 
 ### They get a bonus of 10% of the money for the shipment as the bonus
 
-### Sections on the HTML with:
+Sections on the HTML with:
 
 - [x] h1 with the total money we made this week
 
